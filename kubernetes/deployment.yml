@@ -97,7 +97,7 @@ spec:
         app: test-app
     spec:
       containers:
-        - image: gcr.io/noble-conduit-235714/github_maureenbarasa_test-presentation:latest
+        - image: gcr.io/noble-conduit-235714/github_maureenbarasa_test-presentation
           imagePullPolicy: IfNotPresent
           name: test-presentation-sha256-1
 ---
