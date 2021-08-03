@@ -1,0 +1,15 @@
+steps:
+  # build the container image
+- name: "gcr.io/cloud-builders/docker"
+  args: ["build", "-t", "gcr.io/noble-conduit-235714/github.com/maureenbarasa/test-presentation:latest", "."]
+  # push container image
+- name: "gcr.io/cloud-builders/docker"
+  args: ["push", "gcr.io/noble-conduit-235714/github.com/maureenbarasa/test-presentation:latest"]
+  # deploy container image to GKE
+- name: "gcr.io/cloud-builders/gke-deploy"
+  args:
+  - run
+  - --filename=/kubernetes/deployment.yml
+  - --image=gcr.io/noble-conduit-235714/github.com/maureenbarasa/test-presentation:latest
+  - --location=eu-west-1c
+  - --cluster=my-first-cluster-1
