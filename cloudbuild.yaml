@@ -11,5 +11,5 @@ steps:
   - run
   - --filename=./kubernetes/deployment.yml
   - --image=gcr.io/noble-conduit-235714/github.com/maureenbarasa/test-presentation:latest
-  - --location=eu-west-1c
+  - --location=europe-west1-c
   - --cluster=my-first-cluster-1
